@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-@main
+@main //App's Entry Point
 struct SwiftUI_Apple_GuideApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LandMarks()
         }
     }
 }
