@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUI_Apple_GuideApp: App {
     var body: some Scene {
         WindowGroup {
-            LandMarks()
+            LandmarkList()
         }
     }
 }
