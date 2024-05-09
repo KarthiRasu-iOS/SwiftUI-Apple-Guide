@@ -9,9 +9,17 @@ import SwiftUI
 
 struct LandmarkDetail: View {
     
+    @Environment(ModelData.self) var modelData
+    
     var landmark : LandMark
     
+    var landmarkIndex : Int {
+        modelData.landMarks.firstIndex(where: ({ $0.id == landmark.id}))!
+    }
+    
     var body: some View {
+        @Bindable var modalData = modelData
+        
         ScrollView {
             MapView(coordinate: landmark.locationCoordinates)
                 .frame(height: 300)
@@ -21,9 +29,11 @@ struct LandmarkDetail: View {
                 .padding(.bottom,-130)
             
             VStack(alignment: .leading, content: {
-                
-                Text(landmark.name)
-                    .font(.title)
+                HStack(content: {
+                    Text(landmark.name)
+                        .font(.title)
+                    FavouriteButton(isSet: $modalData.landMarks[landmarkIndex].isFavorite)
+                })
                 
                 HStack{
                     Text(landmark.park)
@@ -43,9 +53,13 @@ struct LandmarkDetail: View {
             
             Spacer()
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
+
 #Preview {
-    LandmarkDetail(landmark: landMarks[0])
+    let modelData = ModelData()
+    return LandmarkDetail(landmark: modelData.landMarks[0])
+        .environment(modelData)
 }

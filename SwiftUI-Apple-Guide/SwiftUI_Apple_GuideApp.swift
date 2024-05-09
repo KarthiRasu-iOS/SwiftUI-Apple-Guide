@@ -9,9 +9,11 @@ import SwiftUI
 
 @main //App's Entry Point
 struct SwiftUI_Apple_GuideApp: App {
+    @State private var modelData = ModelData()
     var body: some Scene {
         WindowGroup {
             LandmarkList()
+                .environment(modelData)
         }
     }
 }
