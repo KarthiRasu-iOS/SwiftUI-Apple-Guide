@@ -9,4 +9,8 @@
 
 # Handling User Input
 
-## Topics Coverd : Show / Hide an element based on boolean, Toogle, Obervable, Environment, Binding 
+## Topics Covered : Show / Hide an element based on boolean, Toogle, Obervable, Environment, Binding 
+
+# Composing Complex Interfaces
+
+## Topics Covered : TabViev, TabItem, ScrollView, Horizontal and Vertical Data loading

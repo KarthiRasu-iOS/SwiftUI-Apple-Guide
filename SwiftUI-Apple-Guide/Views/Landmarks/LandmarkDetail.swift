@@ -18,7 +18,7 @@ struct LandmarkDetail: View {
     }
     
     var body: some View {
-        @Bindable var modalData = modelData
+        @Bindable var modelData = modelData
         
         ScrollView {
             MapView(coordinate: landmark.locationCoordinates)
@@ -32,7 +32,7 @@ struct LandmarkDetail: View {
                 HStack(content: {
                     Text(landmark.name)
                         .font(.title)
-                    FavouriteButton(isSet: $modalData.landMarks[landmarkIndex].isFavorite)
+                    FavouriteButton(isSet: $modelData.landMarks[landmarkIndex].isFavorite)
                 })
                 
                 HStack{

@@ -12,7 +12,7 @@ struct SwiftUI_Apple_GuideApp: App {
     @State private var modelData = ModelData()
     var body: some Scene {
         WindowGroup {
-            LandmarkList()
+            ContentView()
                 .environment(modelData)
         }
     }
