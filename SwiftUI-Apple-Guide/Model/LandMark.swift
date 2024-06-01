@@ -44,4 +44,8 @@ struct LandMark : Hashable , Codable , Identifiable {
     }
     
     var isFeatured : Bool
+    
+    var featureImage : Image? {
+        return isFeatured ? Image(imageName + "_feature") : nil
+    }
 }
